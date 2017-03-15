@@ -1,1 +1,5 @@
 /* CSS declarations go here */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,500,700');
+body{
+  margin: 0 auto;
+}

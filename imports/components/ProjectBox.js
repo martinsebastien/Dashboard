@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class ProjectBox extends Component {
 
@@ -7,7 +7,7 @@ export default class ProjectBox extends Component {
     styles = {
       box: {
         width: '25%',
-        maxWidth: '450',
+        maxWidth: '450px',
         minWidth: '310px',
         padding: '20px',
         margin: '5px',
@@ -19,12 +19,17 @@ export default class ProjectBox extends Component {
         fontSize: '24px',
         textTransform: 'uppercase',
       },
-      statut: {
+      statutFinish: {
         color: '#64DD17',
+        fontWeight: '300',
+      },
+      statutDoing: {
+        color: 'rgb(255,80,80)',
         fontWeight: '300',
       },
       description: {
         fontWeight: '300',
+        textAlign: 'left',
       }
     };
   }
@@ -32,11 +37,15 @@ export default class ProjectBox extends Component {
   render() {
     return (
       <div style={styles.box}>
-        <h1 style={styles.title}>Projet Dashboard</h1>
-        <p style={styles.statut}>En cours</p>
-        <p style={styles.description}>Sed maximum est in amicitia parem esse inferiori. Saepe enim excellentiae quaedam sunt, qualis erat Scipionis in nostro, ut ita dicam, grege. Numquam se ille Philo, numquam Rupilio, numquam Mummio anteposuit, numquam inferioris ordinis amicis, Q. vero Maximum fratrem, egregium virum omnino, sibi nequaquam parem, quod is anteibat aetate, tamquam superiorem colebat suosque omnes per se posse esse ampliores volebat.</p>
+        <h1 style={styles.title}>{this.props.project.title}</h1>
+        <p style={styles.statutFinish}>{this.props.project.status}</p>
+        <p style={styles.description}>{this.props.project.description}</p>
       </div>
     );
   }
 
+}
+
+ProjectBox.propTypes = {
+  project: PropTypes.object.isRequired,
 }

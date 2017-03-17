@@ -4,8 +4,8 @@ import { render } from 'react-dom';
 
 import './main.html';
 
-import App from '../imports/components/App';
+import AppContainer from '../imports/components/AppContainer';
 
 Meteor.startup(() => {
-  render(<App />, document.getElementById('app'))
+  render(<AppContainer />, document.getElementById('app'))
 });

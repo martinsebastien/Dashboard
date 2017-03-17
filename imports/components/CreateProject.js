@@ -15,7 +15,7 @@ export default class CreateProject extends Component {
         verticalAlign: 'top',
         color: 'white',
         backgroundColor: 'green',
-        borderRadius: '60',
+        borderRadius: '60px',
       },
     };
   }

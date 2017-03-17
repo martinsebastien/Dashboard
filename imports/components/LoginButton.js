@@ -8,7 +8,7 @@ export default class LoginButton extends Component {
       background: 'linear-gradient(45deg, rgb(240,240,240) 0%,rgb(255,255,255) 100%)',
       padding: '5px 10px 5px 10px',
       margin: '10px 0 0 17.5px',
-      borderRadius: '5',
+      borderRadius: '5px',
       display: 'inline-block',
       textTransform: 'uppercase',
       color: '#3F51B5',

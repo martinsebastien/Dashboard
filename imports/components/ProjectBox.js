@@ -15,7 +15,11 @@ export default class ProjectBox extends Component {
         padding: '20px',
         margin: '5px',
         fontFamily: '"Work Sans", sans-serif',
-        boxShadow: '0 0 10px rgba(0,0,0,0.15)',
+        boxShadow: '0 0 10px rgba(0,0,0,0.05)',
+        background: 'white',
+        margin: '8px',
+        verticalAlign: 'top',
+        borderRadius: '3px',
         display: 'inline-block',
       },
       title: {

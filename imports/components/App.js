@@ -13,6 +13,7 @@ export default class App extends Component {
     containerProject = {
       textAlign: 'center',
       width: '100%',
+      marginTop: '20px',
     };
   }
 

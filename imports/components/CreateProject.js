@@ -9,7 +9,9 @@ export default class CreateProject extends Component {
     styles = {
       newTask: {
         display: 'inline-block',
-        maxWidth: '390px',
+        width: '25%',
+        maxWidth: '450px',
+        minWidth: '310px',
       },
       inputField: {
         width: '80%',

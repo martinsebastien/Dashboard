@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { MdDelete, MdEdit, MdDone } from 'react-icons/lib/md';
+
+import { Projects } from '../api/projects';
 
 export default class ProjectBox extends Component {
 
@@ -20,7 +23,6 @@ export default class ProjectBox extends Component {
         textTransform: 'uppercase',
       },
       statutFinish: {
-        color: '#64DD17',
         fontWeight: '300',
       },
       statutDoing: {
@@ -30,16 +32,37 @@ export default class ProjectBox extends Component {
       description: {
         fontWeight: '300',
         textAlign: 'left',
-      }
+      },
+      delete: {
+        cursor: 'pointer',
+        color: 'red',
+      },
+      done: {
+        cursor: 'pointer',
+        color: 'lawngreen',
+      },
     };
   }
 
+  toggleFinished() {
+    Projects.update(this.props.project._id, {
+      $set: { status: !this.props.project.status },
+    });
+  }
+
+  deleteProject() {
+    confirm('Voulez-vous vraiment supprimer ce projet ?') ? Projects.remove(this.props.project._id) : null;
+  }
+
   render() {
+    const projectClassName = this.props.project.status ? 'finished' : 'wip';
     return (
       <div style={styles.box}>
         <h1 style={styles.title}>{this.props.project.title}</h1>
-        <p style={styles.statutFinish}>{this.props.project.status}</p>
+        <p style={styles.statutFinish} className={projectClassName}>{this.props.project.status ? 'Terminé' : 'En cours'}</p>
         <p style={styles.description}>{this.props.project.description}</p>
+        <MdDelete style={styles.delete} onClick={this.deleteProject.bind(this)} />
+        <MdDone style={styles.done} onClick={this.toggleFinished.bind(this)} />
       </div>
     );
   }
